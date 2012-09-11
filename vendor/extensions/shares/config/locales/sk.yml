@@ -1,0 +1,31 @@
+sk:
+  refinery:
+    plugins:
+      shares:
+        title: Shares
+    shares:
+      admin:
+        shares:
+          actions:
+            create_new: Pridať Share
+            reorder: Preusporiadať Shares
+            reorder_done: Koniec radenia Shares
+          records:
+            title: Shares
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Shares. Kliknite na "Pridať Share" pre pridanie prvého share.
+          share:
+            view_live_html: Zobraziť náhľad share<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť share
+            delete: Zmazať share
+      shares:
+        show:
+          other: Daľšie Shares
+  activerecord:
+    attributes:
+      'refinery/shares/share':
+        title: Title
+        people_name: People Name
+        time: Time
+        content: Content
+        select_show: Select Show
