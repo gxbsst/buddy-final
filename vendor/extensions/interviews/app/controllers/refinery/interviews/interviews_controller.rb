@@ -23,7 +23,7 @@ module Refinery
 
       def find_all_interviews
         params[:page] ||= 1
-        @interviews = Interview.paginate(:page => params[:page], :per_page => 1)
+        @interviews = Interview.paginate(:page => params[:page], :per_page => 10)
       end
 
       def find_page

@@ -2,3 +2,4 @@ database.yml
 log/*
 tmp/*
 .DS_Store
+public/system/refinery/images/*
