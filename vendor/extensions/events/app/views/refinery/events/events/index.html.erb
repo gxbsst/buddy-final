@@ -19,8 +19,8 @@
 	<div class="subc_top"></div>
 	<div class="subc_center">
 		<div class="sc_title2">活动——我们努力让每一次活动都发挥最大的效能。</div>
-		<div class="act_title">
 		<% unless  @event.blank? %>
+		<div class="act_title">
 			<div class="at_left">活动预告</div>
 			<%= render "share_to_sns/sns_event" %>  
 		</div>
@@ -83,6 +83,7 @@
 
   <script type="text/javascript" >
  function setShare(title,summary) {
+ 				console.log(title);
   			        jiathis_config.title = title;
  			        jiathis_config.summary = summary;
   			    }
