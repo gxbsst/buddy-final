@@ -1,0 +1,29 @@
+zh-CN:
+  refinery:
+    plugins:
+      participates:
+        title: 参与页面图片
+    participates:
+      admin:
+        participates:
+          actions:
+            create_new: 添加新图片
+            reorder: 图片排序
+            reorder_done: 图片排序完成
+          records:
+            title: 参与页面图片
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Participates yet. Click "Add New Participate" to add your first participate.
+          participate:
+            view_live_html: View this participate live <br/><em>(opens in a new window)</em>
+            edit: 编辑参与图片
+            delete: 删除参与图片
+      participates:
+        show:
+          other: 其他参与图片
+  activerecord:
+    attributes:
+      'refinery/participates/participate':
+        title: 图片主题
+        photo: 图片
+        photo_url: 图片链接

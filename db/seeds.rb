@@ -20,3 +20,9 @@ Refinery::Shares::Engine.load_seed
 
 # Added by Refinery CMS Pictures extension
 Refinery::Pictures::Engine.load_seed
+
+# Added by Refinery CMS Participates extension
+Refinery::Participates::Engine.load_seed
+
+# Added by Refinery CMS Applications extension
+Refinery::Applications::Engine.load_seed

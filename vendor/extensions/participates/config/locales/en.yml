@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      participates:
+        title: Participates
+    participates:
+      admin:
+        participates:
+          actions:
+            create_new: Add New Participate
+            reorder: Reorder Participates
+            reorder_done: Done Reordering Participates
+          records:
+            title: Participates
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Participates yet. Click "Add New Participate" to add your first participate.
+          participate:
+            view_live_html: View this participate live <br/><em>(opens in a new window)</em>
+            edit: Edit this participate
+            delete: Remove this participate forever
+      participates:
+        show:
+          other: Other Participates
+  activerecord:
+    attributes:
+      'refinery/participates/participate':
+        title: Title
+        photo: Photo
+        photo_url: Photo Url

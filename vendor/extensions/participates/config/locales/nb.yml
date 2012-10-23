@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      participates:
+        title: Participates
+    participates:
+      admin:
+        participates:
+          actions:
+            create_new: Lag en ny Participate
+            reorder: Endre rekkefølgen på Participates
+            reorder_done: Ferdig å endre rekkefølgen Participates
+          records:
+            title: Participates
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Participates enda. Klikk på "Lag en ny Participate" for å legge til din første participate.
+          participate:
+            view_live_html: Vis hvordan denne participate ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne participate
+            delete: Fjern denne participate permanent
+      participates:
+        show:
+          other: Andre Participates
+  activerecord:
+    attributes:
+      'refinery/participates/participate':
+        title: Title
+        photo: Photo
+        photo_url: Photo Url

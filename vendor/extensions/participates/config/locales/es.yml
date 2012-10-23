@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      participates:
+        title: Participates
+#        article: masculino/femenino
+    participates:
+      admin:
+        participates:
+          actions:
+            create_new: Crear nuevo participate
+            reorder: Reordenar participates
+            reorder_done: Reordenación de participates completada
+          records:
+            title: Participates
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay participates todavía. Pulsa en "Crear nuevo Participate" para crear tu primer participate.
+          participate:
+            view_live_html: Ver este participate como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este participate
+            delete: Borrar este participate para siempre
+      participates:
+        show:
+          other: Otros participates
+  activerecord:
+    attributes:
+      'refinery/participates/participate':
+        title: Title
+        photo: Photo
+        photo_url: Photo Url

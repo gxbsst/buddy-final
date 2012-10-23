@@ -1,0 +1,65 @@
+<div class="top">
+<div class="top_con">
+<div class="logo"><img src="images/logo.gif" width="102" height="111" /></div>
+<div class="menu">
+<ul class="m1">
+<li><a href="/homes">首 页</a></li>
+<li><a href="/origins">起 源</a></li>
+<li><a href="/events">活 动</a></li>
+<li><a href="particopate.html" class="current">参 与</a></li> 
+<li><a href="/shares">分 享</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="content">
+<div class="prompt">
+  <div class="pro_con">您现在的位置：<a href="/homes">首页</a> > <span>参与</span></div></div>
+
+<div class="subpage_con">
+<div class="subc_top"></div>
+
+<div class="subc_center">
+<div class="sc_title3">参与——您的参与，不仅协助他们追求生命中的富足， 也充实您自己的生活，行动起来！</div>
+<ul class="par_list">
+	<% @participates.each do |participate| %>
+	<li>
+		<%= link_to participate.photo_url do %>
+				<%= image_fu(participate.photo, "200x140px") %>
+		<% end %> 
+    </li>
+    <% end %>
+</ul>
+
+<div class="par_btn">
+<div class="pb_left">
+	<span>志愿者申请：</span>
+	<span>
+        <% @applications.each do |application| %>
+            <%= link_to application.volunteer_url do %>
+               <%= image_tag("/images/par_pic6.gif",:width => 160, :height => 39, :border => 0) %>
+            <% end %>
+		<% end %>
+	</span>
+</div>
+<div class="pb_right">
+	<span>捐赠需求：</span>
+	<span>
+        <% @applications.each do |application| %>
+            <%= link_to application.donate_url do %>
+               <%= image_tag("/images/par_pic6.gif",:width => 160, :height => 39, :border => 0) %>
+            <% end %>
+		<% end %>
+	</span>
+</div>
+</div>
+</div>
+
+
+
+<div class="subc_bottom"></div>
+
+</div>
+
+</div>

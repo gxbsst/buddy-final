@@ -1,0 +1,33 @@
+<% content_for :body_content_title do %>
+  <%= @application.volunteer_url %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Volunteer Url</h1>
+    <p>
+      <%=raw @application.volunteer_url %>
+    </p>
+  </section>
+  <section>
+    <h1>Donate Url</h1>
+    <p>
+      <%=raw @application.donate_url %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="applications">
+      <% @applications.each do |application| %>
+        <li>
+          <%= link_to application.volunteer_url, refinery.applications_application_path(application) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

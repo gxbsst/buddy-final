@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120911015553) do
+ActiveRecord::Schema.define(:version => 20121018031919) do
+
+  create_table "refinery_applications", :force => true do |t|
+    t.string   "volunteer_url"
+    t.string   "donate_url"
+    t.integer  "position"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "refinery_events", :force => true do |t|
     t.string   "title"
@@ -111,6 +119,15 @@ ActiveRecord::Schema.define(:version => 20120911015553) do
   add_index "refinery_pages", ["lft"], :name => "index_refinery_pages_on_lft"
   add_index "refinery_pages", ["parent_id"], :name => "index_refinery_pages_on_parent_id"
   add_index "refinery_pages", ["rgt"], :name => "index_refinery_pages_on_rgt"
+
+  create_table "refinery_participates", :force => true do |t|
+    t.string   "title"
+    t.integer  "photo_id"
+    t.string   "photo_url"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "refinery_pictures", :force => true do |t|
     t.string   "title"

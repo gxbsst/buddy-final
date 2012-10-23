@@ -1,0 +1,23 @@
+<%= form_for [refinery, :applications_admin, @application] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @application,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :volunteer_url -%>
+    <%= f.text_field :volunteer_url, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :donate_url -%>
+    <%= f.text_field :donate_url  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.applications.admin.applications.application'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @application.volunteer_url) %>
+<% end -%>

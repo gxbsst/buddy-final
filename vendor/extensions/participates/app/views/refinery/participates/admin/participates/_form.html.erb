@@ -1,0 +1,33 @@
+<%= form_for [refinery, :participates_admin, @participate] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @participate,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :photo -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :photo_id,
+               :image => @participate.photo,
+               :toggle_image_display => false %>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :photo_url -%>
+    <%= f.text_field :photo_url  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.participates.admin.participates.participate'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @participate.title) %>
+<% end -%>

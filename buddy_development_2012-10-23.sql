@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.24)
 # Database: buddy_development
-# Generation Time: 2012-10-15 02:44:09 +0000
+# Generation Time: 2012-10-23 06:02:27 +0000
 # ************************************************************
 
 
@@ -18,6 +18,32 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table refinery_applications
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `refinery_applications`;
+
+CREATE TABLE `refinery_applications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `volunteer_url` varchar(255) DEFAULT NULL,
+  `donate_url` varchar(255) DEFAULT NULL,
+  `position` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `refinery_applications` WRITE;
+/*!40000 ALTER TABLE `refinery_applications` DISABLE KEYS */;
+
+INSERT INTO `refinery_applications` (`id`, `volunteer_url`, `donate_url`, `position`, `created_at`, `updated_at`)
+VALUES
+	(1,'/','/',0,'2012-10-18 03:20:13','2012-10-18 03:20:13');
+
+/*!40000 ALTER TABLE `refinery_applications` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table refinery_events
@@ -46,12 +72,12 @@ LOCK TABLES `refinery_events` WRITE;
 
 INSERT INTO `refinery_events` (`id`, `title`, `begin_at`, `address`, `category`, `content`, `photo_id`, `select_show`, `event_end`, `position`, `created_at`, `updated_at`)
 VALUES
-	(2,'石库门里的舞会 第二期','2012-09-11','上海市石库门','老友乐相伴','<p>旨在吸引青年人／爱心人士／机构进入社区，与智障人士、残障人士、失能老人一起聊天、手工、电影欣赏、运动、做点心等等⋯⋯</p>',9,0,0,0,'2012-09-11 03:14:05','2012-09-11 03:14:05'),
-	(3,'聆听“421”家庭结构变迁声音','2012-09-11','上海市石库门','老友乐相伴','<p>聆听“421”家庭结构变迁声音</p>',10,0,0,1,'2012-09-11 03:15:17','2012-09-11 03:15:17'),
-	(4,'旅游日公益陪伴助老活动 ','2012-09-11','上海市石库门','老友乐相伴','<p>老友乐相伴</p>',11,0,0,2,'2012-09-11 03:16:04','2012-09-11 03:16:04'),
-	(5,'世界卫生日“清爽助洁”活动','2012-09-11','安徽','活动','<p>世界卫生日“清爽助洁”活动</p>',12,0,0,3,'2012-09-11 03:16:36','2012-09-11 03:16:36'),
-	(6,'石库门里地舞会','2012-09-11','上海市石库门','活动','<p>石库门里地舞会</p>',13,0,0,4,'2012-09-11 03:17:24','2012-09-19 05:42:49'),
-	(7,'测试 ','2012-09-19','安徽','老友乐相伴','<p>fdafdsafdafdafdasfdasf</p>',6,1,0,5,'2012-09-19 05:43:37','2012-09-27 08:28:28');
+	(2,'石库门里的舞会 第二期','2012-09-11','上海市石库门','老友乐相伴','旨在吸引青年人／爱心人士／机构进入社区，与智障人士、残障人士、失能老人一起聊天、手工、电影欣赏、运动、做点心等等⋯⋯',9,1,0,0,'2012-09-11 03:14:05','2012-10-19 01:43:36'),
+	(3,'聆听“421”家庭结构变迁声音','2012-09-11','上海市石库门','老友乐相伴','聆听“421”家庭结构变迁声音',10,0,0,1,'2012-09-11 03:15:17','2012-10-15 03:32:58'),
+	(4,'旅游日公益陪伴助老活动 ','2012-09-11','上海市石库门','老友乐相伴','老友乐相伴',11,0,0,2,'2012-09-11 03:16:04','2012-10-15 03:33:11'),
+	(5,'世界卫生日“清爽助洁”活动','2012-09-11','安徽','活动','世界卫生日“清爽助洁”活动',12,0,0,3,'2012-09-11 03:16:36','2012-10-15 03:33:24'),
+	(6,'石库门里地舞会','2012-09-11','上海市石库门','活动','石库门里地舞会',13,0,0,4,'2012-09-11 03:17:24','2012-10-15 03:33:37'),
+	(7,'测试 ','2012-09-19','安徽','老友乐相伴','afdsafdafdafdasfdasf',6,0,0,5,'2012-09-19 05:43:37','2012-10-15 03:33:52');
 
 /*!40000 ALTER TABLE `refinery_events` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -94,7 +120,9 @@ VALUES
 	(11,'image/gif','act_pic8.gif',20673,190,140,'2012/09/11/11_15_59_309_act_pic8.gif',NULL,'2012-09-11 03:15:59','2012-09-11 03:15:59'),
 	(12,'image/gif','act_pic9.gif',12929,190,140,'2012/09/11/11_16_32_208_act_pic9.gif',NULL,'2012-09-11 03:16:32','2012-09-11 03:16:32'),
 	(13,'image/gif','act_pic10.gif',23245,190,140,'2012/09/11/11_17_15_758_act_pic10.gif',NULL,'2012-09-11 03:17:15','2012-09-11 03:17:15'),
-	(14,'image/gif','share_pic4.gif',32135,170,195,'2012/09/11/11_21_12_987_share_pic4.gif',NULL,'2012-09-11 03:21:12','2012-09-11 03:21:12');
+	(14,'image/gif','share_pic4.gif',32135,170,195,'2012/09/11/11_21_12_987_share_pic4.gif',NULL,'2012-09-11 03:21:12','2012-09-11 03:21:12'),
+	(15,'image/gif','par_pic2.gif',22722,200,140,'2012/10/18/10_12_29_613_par_pic2.gif',NULL,'2012-10-18 02:12:29','2012-10-18 02:12:29'),
+	(16,'image/gif','par_pic3.gif',23345,200,140,'2012/10/18/11_11_32_905_par_pic3.gif',NULL,'2012-10-18 03:11:32','2012-10-18 03:11:32');
 
 /*!40000 ALTER TABLE `refinery_images` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -151,7 +179,7 @@ LOCK TABLES `refinery_page_part_translations` WRITE;
 
 INSERT INTO `refinery_page_part_translations` (`id`, `refinery_page_part_id`, `locale`, `body`, `created_at`, `updated_at`)
 VALUES
-	(3,3,'en','<div class=\"top\">\r\n<div class=\"top_con\">\r\n<div class=\"logo\"><img src=\"images/logo.gif\" width=\"102\" height=\"111\" /></div>\r\n<div class=\"menu\">\r\n<ul class=\"m1\">\r\n<li><a href=\"/homes\">首 页</a>\r\n</li>\r\n<li><a href=\"/origin\" class=\"current\">起 源</a>\r\n</li>\r\n<li><a href=\"/events\">活 动</a>\r\n</li>\r\n<li><a href=\"/particopate\">参 与</a>\r\n</li> \r\n<li><a href=\"/shares\">分 享</a>\r\n</li>\r\n \r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n<div class=\"prompt\"><div class=\"pro_con\">您现在的位置：<a href=\"/homes\">首页</a> &gt; <span>起源</span>\r\n</div></div>\r\n\r\n<div class=\"subpage_con\">\r\n<div class=\"subc_top\"></div>\r\n\r\n<div class=\"subc_center\">\r\n<div class=\"sc_title\">起源——倾听社区的声音，我们发现需求。</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_img\"><img src=\"images/origin_pic3.gif\" width=\"300\" height=\"215\" /></div>\r\n<div class=\"sct_text\">\r\n<span class=\"st_1\">“老友计划”是一个非盈利的公益行动，旨在建立弱势人群与社会人士的友谊，改变对弱势人群的态度和观念，消除沟通障碍，唤起平等真挚的社会交往，提升弱势人群的素养和参与社会交往的能力，促进社会共融。</span>\r\n<span class=\"st_2\">服务人群</span>\r\n<span>孤寡老人——特别是年迈的住在老式弄堂社区的孤寡、失能老人。<br />残障人士——特别是需要社会关爱和支持的残障、智障人士。</span>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_text2\">\r\n\r\n<span class=\"st_4\">活动计划</span>\r\n<span class=\"st_3\">【老友乐相伴】——吸引青年人/爱心人士/机构进入社区，与目标服务人群一起聊天、手工、电影欣赏、运动、做点心等等，提供弱势人群精神康复和参与社会的有益活动。</span>\r\n<span class=\"st_3\">【老友影像坊】——号召摄影或者摄像爱好者拿出自己的相机和技术来为那些原本没有机会拍照或者拍短片的目标服务人群留下影像记录和温情瞬间，更广泛的传播唤起全社会对此弱势人群的持续关注和关爱行动。</span>\r\n<span class=\"st_3\">【老友访谈录】——号召社会上的年轻人去深	入目标服务人群的精神世界，倾听和记录他们的人生故事以及生活感悟，也提升和丰富自我的价值观和人生观，提倡代际沟通的无障碍。</span>\r\n\r\n</div>\r\n<div class=\"sct_img2\"><img src=\"images/origin_pic4.gif\" width=\"300\" height=\"215\" /></div>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"subc_bottom\"></div>\r\n\r\n</div>\r\n\r\n</div>\r\n','2012-09-11 02:16:14','2012-09-19 08:31:57'),
+	(3,3,'en','<div class=\"top\">\r\n<div class=\"top_con\">\r\n<div class=\"logo\"><img src=\"images/logo.gif\" width=\"102\" height=\"111\" /></div>\r\n<div class=\"menu\">\r\n<ul class=\"m1\">\r\n<li><a href=\"/homes\">首 页</a>\r\n</li>\r\n<li><a href=\"/origin\" class=\"current\">起 源</a>\r\n</li>\r\n<li><a href=\"/events\">活 动</a>\r\n</li>\r\n<li><a href=\"/participates\">参 与</a>\r\n</li> \r\n<li><a href=\"/shares\">分 享</a>\r\n</li>\r\n \r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n<div class=\"prompt\"><div class=\"pro_con\">您现在的位置：<a href=\"/homes\">首页</a> &gt; <span>起源</span>\r\n</div>\r\n</div>\r\n\r\n<div class=\"subpage_con\">\r\n<div class=\"subc_top\"></div>\r\n\r\n<div class=\"subc_center\">\r\n<div class=\"sc_title\">起源——倾听社区的声音，我们发现需求。</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_img\"><img src=\"images/origin_pic3.gif\" width=\"300\" height=\"215\" /></div>\r\n<div class=\"sct_text\">\r\n<span class=\"st_1\">“老友计划”是一个非盈利的公益行动，旨在建立弱势人群与社会人士的友谊，改变对弱势人群的态度和观念，消除沟通障碍，唤起平等真挚的社会交往，提升弱势人群的素养和参与社会交往的能力，促进社会共融。</span>\r\n<span class=\"st_2\">服务人群</span>\r\n<span>孤寡老人——特别是年迈的住在老式弄堂社区的孤寡、失能老人。<br />残障人士——特别是需要社会关爱和支持的残障、智障人士。</span>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_text2\">\r\n\r\n<span class=\"st_4\">活动计划</span>\r\n<span class=\"st_3\">【老友乐相伴】——吸引青年人/爱心人士/机构进入社区，与目标服务人群一起聊天、手工、电影欣赏、运动、做点心等等，提供弱势人群精神康复和参与社会的有益活动。</span>\r\n<span class=\"st_3\">【老友影像坊】——号召摄影或者摄像爱好者拿出自己的相机和技术来为那些原本没有机会拍照或者拍短片的目标服务人群留下影像记录和温情瞬间，更广泛的传播唤起全社会对此弱势人群的持续关注和关爱行动。</span>\r\n<span class=\"st_3\">【老友访谈录】——号召社会上的年轻人去深	入目标服务人群的精神世界，倾听和记录他们的人生故事以及生活感悟，也提升和丰富自我的价值观和人生观，提倡代际沟通的无障碍。</span>\r\n\r\n</div>\r\n<div class=\"sct_img2\"><img src=\"images/origin_pic4.gif\" width=\"300\" height=\"215\" /></div>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"subc_bottom\"></div>\r\n\r\n</div>\r\n\r\n</div>\r\n','2012-09-11 02:16:14','2012-10-18 03:10:51'),
 	(4,4,'en','','2012-09-11 02:16:14','2012-09-11 02:16:14'),
 	(11,3,'zh-CN','<div class=\"content\">\r\n<div class=\"prompt\"><div class=\"pro_con\">您现在的位置：<a href=\"/homes\">首页</a> &gt; <span>起源</span>\r\n</div></div>\r\n\r\n<div class=\"subpage_con\">\r\n<div class=\"subc_top\"></div>\r\n\r\n<div class=\"subc_center\">\r\n<div class=\"sc_title\">起源——倾听社区的声音，我们发现需求。</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_img\"><img src=\"images/origin_pic3.gif\" width=\"300\" height=\"215\" /></div>\r\n<div class=\"sct_text\">\r\n<span class=\"st_1\">“老友计划”是一个非盈利的公益行动，旨在建立弱势人群与社会人士的友谊，改变对弱势人群的态度和观念，消除沟通障碍，唤起平等真挚的社会交往，提升弱势人群的素养和参与社会交往的能力，促进社会共融。</span>\r\n<span class=\"st_2\">服务人群</span>\r\n<span>孤寡老人——特别是年迈的住在老式弄堂社区的孤寡、失能老人。<br />残障人士——特别是需要社会关爱和支持的残障、智障人士。</span>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_text2\">\r\n\r\n<span class=\"st_4\">活动计划</span>\r\n<span class=\"st_3\">【老友乐相伴】——吸引青年人/爱心人士/机构进入社区，与目标服务人群一起聊天、手工、电影欣赏、运动、做点心等等，提供弱势人群精神康复和参与社会的有益活动。</span>\r\n<span class=\"st_3\">【老友影像坊】——号召摄影或者摄像爱好者拿出自己的相机和技术来为那些原本没有机会拍照或者拍短片的目标服务人群留下影像记录和温情瞬间，更广泛的传播唤起全社会对此弱势人群的持续关注和关爱行动。</span>\r\n<span class=\"st_3\">【老友访谈录】——号召社会上的年轻人去深	入目标服务人群的精神世界，倾听和记录他们的人生故事以及生活感悟，也提升和丰富自我的价值观和人生观，提倡代际沟通的无障碍。</span>\r\n\r\n</div>\r\n<div class=\"sct_img2\"><img src=\"images/origin_pic4.gif\" width=\"300\" height=\"215\" /></div>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"subc_bottom\"></div>\r\n\r\n</div>\r\n\r\n</div>','2012-09-11 03:43:26','2012-09-11 03:44:41'),
 	(12,4,'zh-CN','','2012-09-11 03:43:26','2012-09-11 03:43:26'),
@@ -169,7 +197,9 @@ VALUES
 	(50,38,'en','<p>媒体报道内容。。。</p>','2012-09-27 04:01:26','2012-09-27 04:01:26'),
 	(51,39,'en','','2012-09-27 04:01:26','2012-09-27 04:01:26'),
 	(52,40,'en','<p>免费声明内容。。。</p>','2012-09-27 04:02:01','2012-09-27 04:02:01'),
-	(53,41,'en','','2012-09-27 04:02:01','2012-09-27 04:02:01');
+	(53,41,'en','','2012-09-27 04:02:01','2012-09-27 04:02:01'),
+	(54,42,'en','<p>This is just a standard text page example. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin metus dolor, hendrerit sit amet, aliquet nec, posuere sed, purus. Nullam et velit iaculis odio sagittis placerat. Duis metus tellus, pellentesque ut, luctus id, egestas a, lorem. Praesent vitae mauris. Aliquam sed nulla. Sed id nunc vitae leo suscipit viverra. Proin at leo ut lacus consequat rhoncus. In hac habitasse platea dictumst. Nunc quis tortor sed libero hendrerit dapibus.\n\nInteger interdum purus id erat. Duis nec velit vitae dolor mattis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pellentesque dignissim lacus. Nulla semper euismod arcu. Suspendisse egestas, erat a consectetur dapibus, felis orci cursus eros, et sollicitudin purus urna et metus. Integer eget est sed nunc euismod vestibulum. Integer nulla dui, tristique in, euismod et, interdum imperdiet, enim. Mauris at lectus. Sed egestas tortor nec mi.</p>','2012-10-18 02:02:13','2012-10-18 02:02:13'),
+	(55,43,'en','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla nisi a elit. Duis ultricies orci ut arcu. Ut ac nibh. Duis blandit rhoncus magna. Pellentesque semper risus ut magna. Etiam pulvinar tellus eget diam. Morbi blandit. Donec pulvinar mauris at ligula. Sed pellentesque, ipsum id congue molestie, lectus risus egestas pede, ac viverra diam lacus ac urna. Aenean elit.</p>','2012-10-18 02:02:13','2012-10-18 02:02:13');
 
 /*!40000 ALTER TABLE `refinery_page_part_translations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -198,8 +228,8 @@ LOCK TABLES `refinery_page_parts` WRITE;
 
 INSERT INTO `refinery_page_parts` (`id`, `refinery_page_id`, `title`, `body`, `position`, `created_at`, `updated_at`)
 VALUES
-	(3,2,'Body','<div class=\"top\">\r\n<div class=\"top_con\">\r\n<div class=\"logo\"><img src=\"images/logo.gif\" width=\"102\" height=\"111\" /></div>\r\n<div class=\"menu\">\r\n<ul class=\"m1\">\r\n<li><a href=\"/homes\">首 页</a>\r\n</li>\r\n<li><a href=\"/origin\" class=\"current\">起 源</a>\r\n</li>\r\n<li><a href=\"/events\">活 动</a>\r\n</li>\r\n<li><a href=\"/particopate\">参 与</a>\r\n</li> \r\n<li><a href=\"/shares\">分 享</a>\r\n</li>\r\n \r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n<div class=\"prompt\"><div class=\"pro_con\">您现在的位置：<a href=\"/homes\">首页</a> &gt; <span>起源</span>\r\n</div></div>\r\n\r\n<div class=\"subpage_con\">\r\n<div class=\"subc_top\"></div>\r\n\r\n<div class=\"subc_center\">\r\n<div class=\"sc_title\">起源——倾听社区的声音，我们发现需求。</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_img\"><img src=\"images/origin_pic3.gif\" width=\"300\" height=\"215\" /></div>\r\n<div class=\"sct_text\">\r\n<span class=\"st_1\">“老友计划”是一个非盈利的公益行动，旨在建立弱势人群与社会人士的友谊，改变对弱势人群的态度和观念，消除沟通障碍，唤起平等真挚的社会交往，提升弱势人群的素养和参与社会交往的能力，促进社会共融。</span>\r\n<span class=\"st_2\">服务人群</span>\r\n<span>孤寡老人——特别是年迈的住在老式弄堂社区的孤寡、失能老人。<br />残障人士——特别是需要社会关爱和支持的残障、智障人士。</span>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_text2\">\r\n\r\n<span class=\"st_4\">活动计划</span>\r\n<span class=\"st_3\">【老友乐相伴】——吸引青年人/爱心人士/机构进入社区，与目标服务人群一起聊天、手工、电影欣赏、运动、做点心等等，提供弱势人群精神康复和参与社会的有益活动。</span>\r\n<span class=\"st_3\">【老友影像坊】——号召摄影或者摄像爱好者拿出自己的相机和技术来为那些原本没有机会拍照或者拍短片的目标服务人群留下影像记录和温情瞬间，更广泛的传播唤起全社会对此弱势人群的持续关注和关爱行动。</span>\r\n<span class=\"st_3\">【老友访谈录】——号召社会上的年轻人去深	入目标服务人群的精神世界，倾听和记录他们的人生故事以及生活感悟，也提升和丰富自我的价值观和人生观，提倡代际沟通的无障碍。</span>\r\n\r\n</div>\r\n<div class=\"sct_img2\"><img src=\"images/origin_pic4.gif\" width=\"300\" height=\"215\" /></div>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"subc_bottom\"></div>\r\n\r\n</div>\r\n\r\n</div>\r\n',0,'2012-09-11 02:16:14','2012-09-19 08:31:57'),
-	(4,2,'Side Body','',1,'2012-09-11 02:16:14','2012-09-19 08:31:57'),
+	(3,2,'Body','<div class=\"top\">\r\n<div class=\"top_con\">\r\n<div class=\"logo\"><img src=\"images/logo.gif\" width=\"102\" height=\"111\" /></div>\r\n<div class=\"menu\">\r\n<ul class=\"m1\">\r\n<li><a href=\"/homes\">首 页</a>\r\n</li>\r\n<li><a href=\"/origin\" class=\"current\">起 源</a>\r\n</li>\r\n<li><a href=\"/events\">活 动</a>\r\n</li>\r\n<li><a href=\"/participates\">参 与</a>\r\n</li> \r\n<li><a href=\"/shares\">分 享</a>\r\n</li>\r\n \r\n</ul>\r\n</div>\r\n</div>\r\n</div>\r\n\r\n<div class=\"content\">\r\n<div class=\"prompt\"><div class=\"pro_con\">您现在的位置：<a href=\"/homes\">首页</a> &gt; <span>起源</span>\r\n</div>\r\n</div>\r\n\r\n<div class=\"subpage_con\">\r\n<div class=\"subc_top\"></div>\r\n\r\n<div class=\"subc_center\">\r\n<div class=\"sc_title\">起源——倾听社区的声音，我们发现需求。</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_img\"><img src=\"images/origin_pic3.gif\" width=\"300\" height=\"215\" /></div>\r\n<div class=\"sct_text\">\r\n<span class=\"st_1\">“老友计划”是一个非盈利的公益行动，旨在建立弱势人群与社会人士的友谊，改变对弱势人群的态度和观念，消除沟通障碍，唤起平等真挚的社会交往，提升弱势人群的素养和参与社会交往的能力，促进社会共融。</span>\r\n<span class=\"st_2\">服务人群</span>\r\n<span>孤寡老人——特别是年迈的住在老式弄堂社区的孤寡、失能老人。<br />残障人士——特别是需要社会关爱和支持的残障、智障人士。</span>\r\n</div>\r\n\r\n</div>\r\n\r\n<div class=\"scc_top\">\r\n<div class=\"sct_text2\">\r\n\r\n<span class=\"st_4\">活动计划</span>\r\n<span class=\"st_3\">【老友乐相伴】——吸引青年人/爱心人士/机构进入社区，与目标服务人群一起聊天、手工、电影欣赏、运动、做点心等等，提供弱势人群精神康复和参与社会的有益活动。</span>\r\n<span class=\"st_3\">【老友影像坊】——号召摄影或者摄像爱好者拿出自己的相机和技术来为那些原本没有机会拍照或者拍短片的目标服务人群留下影像记录和温情瞬间，更广泛的传播唤起全社会对此弱势人群的持续关注和关爱行动。</span>\r\n<span class=\"st_3\">【老友访谈录】——号召社会上的年轻人去深	入目标服务人群的精神世界，倾听和记录他们的人生故事以及生活感悟，也提升和丰富自我的价值观和人生观，提倡代际沟通的无障碍。</span>\r\n\r\n</div>\r\n<div class=\"sct_img2\"><img src=\"images/origin_pic4.gif\" width=\"300\" height=\"215\" /></div>\r\n</div>\r\n\r\n</div>\r\n\r\n\r\n\r\n<div class=\"subc_bottom\"></div>\r\n\r\n</div>\r\n\r\n</div>\r\n',0,'2012-09-11 02:16:14','2012-10-18 03:10:51'),
+	(4,2,'Side Body','',1,'2012-09-11 02:16:14','2012-10-18 03:10:51'),
 	(25,13,'Body','<p>Welcome to our site. This is just a place holder page while we gather our content.</p>',0,'2012-09-19 02:28:30','2012-09-19 02:36:43'),
 	(26,13,'Side Body','<p>This is another block of content over here.</p>',1,'2012-09-19 02:28:30','2012-09-19 02:36:43'),
 	(27,14,'Body','<h2>Sorry, there was a problem...</h2><p>The page you requested was not found.</p><p><a href=\'/\'>Return to the home page</a></p>',0,'2012-09-19 02:28:30','2012-09-19 02:28:30'),
@@ -212,7 +242,9 @@ VALUES
 	(38,20,'Body','<p>媒体报道内容。。。</p>',0,'2012-09-27 04:01:26','2012-09-27 04:01:26'),
 	(39,20,'Side Body','',1,'2012-09-27 04:01:26','2012-09-27 04:01:26'),
 	(40,21,'Body','<p>免费声明内容。。。</p>',0,'2012-09-27 04:02:01','2012-09-27 04:02:01'),
-	(41,21,'Side Body','',1,'2012-09-27 04:02:01','2012-09-27 04:02:01');
+	(41,21,'Side Body','',1,'2012-09-27 04:02:01','2012-09-27 04:02:01'),
+	(42,22,'Body','<p>This is just a standard text page example. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin metus dolor, hendrerit sit amet, aliquet nec, posuere sed, purus. Nullam et velit iaculis odio sagittis placerat. Duis metus tellus, pellentesque ut, luctus id, egestas a, lorem. Praesent vitae mauris. Aliquam sed nulla. Sed id nunc vitae leo suscipit viverra. Proin at leo ut lacus consequat rhoncus. In hac habitasse platea dictumst. Nunc quis tortor sed libero hendrerit dapibus.\n\nInteger interdum purus id erat. Duis nec velit vitae dolor mattis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse pellentesque dignissim lacus. Nulla semper euismod arcu. Suspendisse egestas, erat a consectetur dapibus, felis orci cursus eros, et sollicitudin purus urna et metus. Integer eget est sed nunc euismod vestibulum. Integer nulla dui, tristique in, euismod et, interdum imperdiet, enim. Mauris at lectus. Sed egestas tortor nec mi.</p>',0,'2012-10-18 02:02:13','2012-10-18 02:02:13'),
+	(43,22,'Side Body','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla nisi a elit. Duis ultricies orci ut arcu. Ut ac nibh. Duis blandit rhoncus magna. Pellentesque semper risus ut magna. Etiam pulvinar tellus eget diam. Morbi blandit. Donec pulvinar mauris at ligula. Sed pellentesque, ipsum id congue molestie, lectus risus egestas pede, ac viverra diam lacus ac urna. Aenean elit.</p>',1,'2012-10-18 02:02:13','2012-10-18 02:02:13');
 
 /*!40000 ALTER TABLE `refinery_page_parts` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -253,7 +285,8 @@ VALUES
 	(26,18,'en','关于新途',NULL,'','关于新途','2012-09-27 04:00:24','2012-09-27 04:00:24'),
 	(27,19,'en','联系我们',NULL,'','联系我们','2012-09-27 04:00:56','2012-09-27 04:00:56'),
 	(28,20,'en','媒体报道',NULL,'','媒体报道','2012-09-27 04:01:26','2012-09-27 04:01:26'),
-	(29,21,'en','免费声明',NULL,'','免费声明','2012-09-27 04:02:01','2012-09-27 04:02:01');
+	(29,21,'en','免费声明',NULL,'','免费声明','2012-09-27 04:02:01','2012-09-27 04:02:01'),
+	(30,22,'en','About',NULL,NULL,'about','2012-10-18 02:02:13','2012-10-18 02:02:13');
 
 /*!40000 ALTER TABLE `refinery_page_translations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -295,16 +328,47 @@ LOCK TABLES `refinery_pages` WRITE;
 
 INSERT INTO `refinery_pages` (`id`, `parent_id`, `path`, `slug`, `show_in_menu`, `link_url`, `menu_match`, `deletable`, `draft`, `skip_to_first_child`, `lft`, `rgt`, `depth`, `view_template`, `layout_template`, `created_at`, `updated_at`)
 VALUES
-	(2,NULL,NULL,'origins',1,'',NULL,1,0,0,1,2,0,NULL,NULL,'2012-09-11 02:16:14','2012-09-19 08:31:57'),
+	(2,NULL,NULL,'origins',1,'',NULL,1,0,0,1,2,0,NULL,NULL,'2012-09-11 02:16:14','2012-10-18 03:10:51'),
 	(13,NULL,NULL,'home',1,'/','^/$',0,0,0,3,6,0,NULL,NULL,'2012-09-19 02:28:30','2012-09-19 02:36:43'),
 	(14,13,NULL,'page-not-found',0,NULL,'^/404$',0,0,0,4,5,1,NULL,NULL,'2012-09-19 02:28:30','2012-09-19 02:28:30'),
 	(17,NULL,NULL,'static',1,'',NULL,1,0,0,7,16,0,NULL,NULL,'2012-09-27 03:59:02','2012-09-27 04:36:38'),
 	(18,17,NULL,'关于新途',1,'http://localhost:3000/interviews',NULL,1,0,0,8,9,1,NULL,NULL,'2012-09-27 04:00:24','2012-10-15 02:06:11'),
 	(19,17,NULL,'联系我们',1,'',NULL,1,0,0,10,11,1,NULL,NULL,'2012-09-27 04:00:56','2012-09-27 06:06:47'),
 	(20,17,NULL,'媒体报道',1,'',NULL,1,0,0,12,13,1,NULL,NULL,'2012-09-27 04:01:26','2012-09-27 04:01:26'),
-	(21,17,NULL,'免费声明',1,'',NULL,1,0,0,14,15,1,NULL,NULL,'2012-09-27 04:02:01','2012-09-27 04:02:01');
+	(21,17,NULL,'免费声明',1,'',NULL,1,0,0,14,15,1,NULL,NULL,'2012-09-27 04:02:01','2012-09-27 04:02:01'),
+	(22,NULL,NULL,'about',1,NULL,NULL,1,0,0,17,18,0,NULL,NULL,'2012-10-18 02:02:13','2012-10-18 02:02:13');
 
 /*!40000 ALTER TABLE `refinery_pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table refinery_participates
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `refinery_participates`;
+
+CREATE TABLE `refinery_participates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `photo_id` int(11) DEFAULT NULL,
+  `photo_url` varchar(255) DEFAULT NULL,
+  `position` int(11) DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `refinery_participates` WRITE;
+/*!40000 ALTER TABLE `refinery_participates` DISABLE KEYS */;
+
+INSERT INTO `refinery_participates` (`id`, `title`, `photo_id`, `photo_url`, `position`, `created_at`, `updated_at`)
+VALUES
+	(5,'picture 1',16,'/events',0,'2012-10-19 01:45:58','2012-10-19 01:45:58'),
+	(6,'picture 2',15,'/interviews',1,'2012-10-19 01:46:10','2012-10-19 01:46:10'),
+	(7,'picture 3',13,'/',2,'2012-10-19 01:46:24','2012-10-19 01:46:24'),
+	(8,'picture 4',9,'/events',3,'2012-10-19 01:46:38','2012-10-19 01:46:38');
+
+/*!40000 ALTER TABLE `refinery_participates` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -329,9 +393,9 @@ LOCK TABLES `refinery_pictures` WRITE;
 
 INSERT INTO `refinery_pictures` (`id`, `title`, `url`, `photo_id`, `position`, `created_at`, `updated_at`)
 VALUES
-	(1,'picture 1','/events',1,1,'2012-09-11 03:07:01','2012-09-11 03:53:14'),
-	(2,'picture 2','/origins',2,2,'2012-09-11 03:07:19','2012-09-11 03:53:14'),
-	(3,'picture 3','/interviews',3,0,'2012-09-11 03:07:40','2012-09-11 03:53:14'),
+	(1,'picture 1','/events',1,0,'2012-09-11 03:07:01','2012-10-18 02:21:13'),
+	(2,'picture 2','/origins',2,1,'2012-09-11 03:07:19','2012-10-18 02:21:13'),
+	(3,'picture 3','/interviews',3,2,'2012-09-11 03:07:40','2012-10-18 02:21:13'),
 	(4,'picture 4','/events',4,3,'2012-09-11 03:08:00','2012-09-11 03:08:00'),
 	(5,'picture 5','/origins',5,4,'2012-09-11 03:08:22','2012-09-11 03:08:22'),
 	(6,'picture 6','/origins',6,5,'2012-09-11 03:08:48','2012-09-11 03:08:48'),
@@ -434,8 +498,8 @@ VALUES
 	(1,'活动感言','vickwold','2012-09-11','<p>4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言</p>',0,0,'2012-09-11 03:18:15','2012-09-11 03:18:15'),
 	(2,'fasd','aaa','2012-09-11','<p>4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言</p>',0,1,'2012-09-11 03:18:34','2012-09-11 03:18:34'),
 	(3,'活动感言1','新share','2012-09-11','<p>4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言</p>',0,2,'2012-09-11 03:18:55','2012-09-11 03:18:55'),
-	(4,'fasd1','新share','2012-09-11','<p>4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言</p>',1,3,'2012-09-11 03:19:18','2012-09-11 03:19:18'),
-	(5,'dfs','xiao','2012-09-11','<p>4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言</p>',1,4,'2012-09-11 03:19:40','2012-09-11 03:19:40');
+	(4,'fasd1','新share','2012-09-11','4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言',1,3,'2012-09-11 03:19:18','2012-10-15 03:31:57'),
+	(5,'dfs','xiao','2012-09-11','4月7日我们参加了一个世界卫生日公益日的公益活动，主要是帮老人做清洁，我感受到比起物质上的需求，老人们需要家人的陪伴和沟通交流。如果有人能够平时多去看望他们，不让他们感到空虚，觉得自己是家里的负担，这是对老人最大的安慰”——志愿者华理吴晓清参加老友计划“清爽助洁”活动的感言',1,4,'2012-09-11 03:19:40','2012-10-15 03:32:13');
 
 /*!40000 ALTER TABLE `refinery_shares` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -461,15 +525,20 @@ LOCK TABLES `refinery_user_plugins` WRITE;
 
 INSERT INTO `refinery_user_plugins` (`id`, `user_id`, `name`, `position`)
 VALUES
-	(1,1,'refinery_users',0),
-	(2,1,'refinery_dashboard',1),
-	(3,1,'refinery_images',2),
-	(4,1,'refinery_files',3),
-	(5,1,'refinery_pages',4),
-	(6,1,'events',5),
-	(7,1,'interviews',6),
-	(8,1,'shares',7),
-	(9,1,'pictures',8);
+	(23,1,'refinery_users',0),
+	(24,1,'refinery_dashboard',1),
+	(25,1,'refinery_images',2),
+	(26,1,'refinery_files',3),
+	(27,1,'refinery_pages',4),
+	(28,1,'events',5),
+	(29,1,'interviews',6),
+	(30,1,'shares',7),
+	(31,1,'pictures',8),
+	(32,1,'refinery_core',9),
+	(33,1,'refinery_dialogs',10),
+	(34,1,'refinery_i18n',11),
+	(35,1,'participates',12),
+	(36,1,'applications',13);
 
 /*!40000 ALTER TABLE `refinery_user_plugins` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -533,7 +602,10 @@ VALUES
 	('20120911014703'),
 	('20120911015021'),
 	('20120911015312'),
-	('20120911015553');
+	('20120911015553'),
+	('20121018020156'),
+	('20121018024424'),
+	('20121018031919');
 
 /*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -573,7 +645,8 @@ VALUES
 	(25,26,'Refinery::Page::Translation','','','','2012-09-27 04:00:24','2012-09-27 04:00:24'),
 	(26,27,'Refinery::Page::Translation','','','','2012-09-27 04:00:56','2012-09-27 04:00:56'),
 	(27,28,'Refinery::Page::Translation','','','','2012-09-27 04:01:26','2012-09-27 04:01:26'),
-	(28,29,'Refinery::Page::Translation','','','','2012-09-27 04:02:01','2012-09-27 04:02:01');
+	(28,29,'Refinery::Page::Translation','','','','2012-09-27 04:02:01','2012-09-27 04:02:01'),
+	(29,30,'Refinery::Page::Translation',NULL,NULL,NULL,'2012-10-18 02:02:13','2012-10-18 02:02:13');
 
 /*!40000 ALTER TABLE `seo_meta` ENABLE KEYS */;
 UNLOCK TABLES;

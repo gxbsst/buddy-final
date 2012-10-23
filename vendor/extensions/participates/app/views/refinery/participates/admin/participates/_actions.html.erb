@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Participates::Admin::ParticipatesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.participates_admin_participates_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_participates_admin_participate_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Participates::Admin::ParticipatesController.sortable? && ::Refinery::Participates::Participate.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Participates"),
+                 refinery.participates_admin_participates_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Participates"),
+                 refinery.participates_admin_participates_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

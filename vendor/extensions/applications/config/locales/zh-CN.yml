@@ -1,0 +1,28 @@
+zh-CN:
+  refinery:
+    plugins:
+      applications:
+        title: 参与志愿者申请链接
+    applications:
+      admin:
+        applications:
+          actions:
+            create_new: 添加一组新链接
+            reorder: 链接组排序
+            reorder_done: 完成链接组排序
+          records:
+            title: 申请链接
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Applications yet. Click "Add New Application" to add your first application.
+          application:
+            view_live_html: View this application live <br/><em>(opens in a new window)</em>
+            edit: 编辑链接
+            delete: 删除链接
+      applications:
+        show:
+          other: 其他链接
+  activerecord:
+    attributes:
+      'refinery/applications/application':
+        volunteer_url: 志愿者申请链接
+        donate_url: 捐赠需求链接

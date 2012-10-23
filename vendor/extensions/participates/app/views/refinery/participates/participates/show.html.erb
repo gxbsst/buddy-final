@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @participate.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @participate.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo</h1>
+    <p>
+      <%= image_fu @participate.photo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Photo Url</h1>
+    <p>
+      <%=raw @participate.photo_url %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="participates">
+      <% @participates.each do |participate| %>
+        <li>
+          <%= link_to participate.title, refinery.participates_participate_path(participate) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
